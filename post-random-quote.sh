@@ -7,4 +7,6 @@ RANDQ=$((1 + $RANDOM % $NUMQ))
 
 QUOTE=$(cat $MYDIR/quotes.json | jq -r --arg i $RANDQ '.[$i|tonumber].text')
 
-noscl publish "$QUOTE"
+GOBINPATH=($HOME/go/bin)
+
+$GOBINPATH/noscl publish "$QUOTE"
